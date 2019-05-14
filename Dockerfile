@@ -1,8 +1,9 @@
-FROM python:2.7.14-alpine3.7
+FROM python:3.5.7-alpine3.8
 
 MAINTAINER Piotr Styczynski
 
 RUN apk update && apk upgrade
+RUN pip install --upgrade pip
 RUN apk add --no-cache openssl-dev libffi-dev musl-dev gcc
 RUN pip install moto && pip install flask
 
